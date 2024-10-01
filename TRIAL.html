@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<link rel="stylesheet" href="style2.css">
+    <h1>ONLINE PORTFOLIO </h1>
+</head>
+<body>
+	<div class="container">
+		<div class="login-form">
+			<h4>Login</h4>
+			<form id="login-form">
+				<input type="text" placeholder="Username" required id="username">
+				<input type="password" placeholder="Password" required id="password">
+				<button type="submit">Login</button>
+			</form>
+			<p>Don't have an account? <a href="trial2.html">Sign up</a>/<a href="trial1.html">Homepage</a></p>
+		</div>
+	</div>
+
+	<script>
+		const form = document.getElementById('login-form');
+
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+
+			const username = document.getElementById('username').value;
+			const password = document.getElementById('password').value;
+
+			if (username === 'prem' && password === '123456') {
+				window.location.href = 'trialhome.html';
+			} else {
+				alert('Invalid username or password');
+			}
+		});
+	</script>
+</body>
+</html>
