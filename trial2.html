@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sign Up</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style2.css">
+	<h1>ONLINE PORTFOLIO</h1>
+	
+</head>
+<body>
+	<div class="container2">
+		<h5>Create an account to access your online portfolio.</h5>
+		<form name="signupForm" action="signup.php" method="post" onsubmit="return validateSignup()">
+			<label for="username"></label>
+			<input type="text" id="username" name="username" placeholder="Username" required>
+			
+			<label for="email"></label>
+			<input type="email" id="email" name="email" placeholder="Email" required>
+			
+			<label for="password"></label>
+			<input type="password" id="password" name="password" placeholder="Password" required>
+			
+			<label for="confirm_password"></label>
+			<input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+			
+			<input type="submit" value="Sign up">
+		</form>
+		<script>
+			function validateSignup(){
+				var username = document.forms["signupForm"]["username"].value.trim();
+				var email = document.forms["signupForm"]["email"].value.trim();
+				var password = document.forms["signupForm"]["password"].value.trim();
+				var confirm_password = document.forms["signupForm"]["confirm_password"].value.trim();
+
+				if(username === "" && email === "" && password === "" && confirm_password === ""){
+					alert("All fields are empty!");
+					return false;
+				}
+				if(password !== confirm_password){
+					alert("Passwords do not match!");
+					return false;
+				}
+				return true;
+			}
+		</script>
+		<p>Already have an account? <a href="index.php">Login</a> / <a href="index.html">Homepage</a></p>
+	</div>
+</body>
+</html>
